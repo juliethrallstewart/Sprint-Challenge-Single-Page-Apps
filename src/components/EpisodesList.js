@@ -41,7 +41,8 @@ const EpisodesList = () => {
 			<CardStyle className="content-wrapper">
 				<StyledH2>{episode.name}</StyledH2>
 				<Card.Content>
-            {/* <Status>Location: {location.type} {location.dimension}</Status> */}
+            <Status>Airdate: {episode.air_date}</Status>
+            <Status>Episode: {episode.episode}</Status>
 				</Card.Content>
 			</CardStyle>
 		</CardDisplay>

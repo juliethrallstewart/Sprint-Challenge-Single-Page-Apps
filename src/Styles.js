@@ -45,7 +45,7 @@ max-width: 100%;
 
 export const Status = styled.p`
 color: gray;
-margin-top: -50px;
+line-height: 5px;
 `;
 
 export const Para = styled.p`
