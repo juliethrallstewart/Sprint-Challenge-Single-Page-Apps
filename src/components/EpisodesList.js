@@ -6,7 +6,7 @@ import { StyledH2, CardStyle, CardDisplay, Image, Status, Para, CardFooter } fro
 
 
 
-const episodesAPI = 'https://rickandmortyapi.com/api/episodes'
+const episodesAPI = 'https://rickandmortyapi.com/api/episode'
 
 const EpisodesList = () => {
   // TODO: Add useState to track data from useEffect
