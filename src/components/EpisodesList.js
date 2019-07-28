@@ -6,18 +6,18 @@ import { StyledH2, CardStyle, CardDisplay, Image, Status, Para, CardFooter } fro
 
 
 
-const locationsAPI = 'https://rickandmortyapi.com/api/location'
+const episodesAPI = 'https://rickandmortyapi.com/api/episode'
 
-const LocationsList = () => {
+const EpisodesList = () => {
   // TODO: Add useState to track data from useEffect
 
-  const [API, setAPI] = useState(locationsAPI);
+  const [API, setAPI] = useState(episodesAPI);
 
   const [content, setContent] = useState([]);
 
   useEffect(() => {
-    const getLocations = () => {
-      axios.get(locationsAPI)
+    const getEpisodes = () => {
+      axios.get(episodesAPI)
       .then (res => {
         setContent(res.data.results);
       })
@@ -26,7 +26,7 @@ const LocationsList = () => {
       });
     };
 
-    getLocations();
+    getEpisodes();
     // TODO: Add AJAX/API Request here - must run in `useEffect`
     //  Important: verify the 2nd `useEffect` parameter: the dependancies array!
   }, [API]);
@@ -34,14 +34,15 @@ const LocationsList = () => {
 
   return (
     <section className='character-list grid-view'>
-    {content.map(location => {
+    {content.map(episode => {
       return (
 		<CardDisplay className="photo-card">
     {/* <Image src={character.image}></Image> */}
 			<CardStyle className="content-wrapper">
-				<StyledH2>{location.name}</StyledH2>
+				<StyledH2>{episode.name}</StyledH2>
 				<Card.Content>
-            <Status>Location: {location.type} {location.dimension}</Status>
+            <Status>Airdate: {episode.air_date}</Status>
+            <Status>Episode: {episode.episode}</Status>
 				</Card.Content>
 			</CardStyle>
 		</CardDisplay>
@@ -50,4 +51,4 @@ const LocationsList = () => {
 	);
 };
 
-export default LocationsList;
+export default EpisodesList;
